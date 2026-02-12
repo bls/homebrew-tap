@@ -5,46 +5,46 @@
 class VicPtvCli < Formula
   desc "CLI for the Public Transport Victoria (PTV) Timetable API"
   homepage "https://github.com/bls/vic-ptv-cli"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bls/vic-ptv-cli/releases/download/v0.1.0/vic-ptv-cli_0.1.0_darwin_amd64.tar.gz"
-      sha256 "c030b705601009d3bd80db0a3fcc39e6eeba26f00eafbe4a42b0c842b842137d"
+      url "https://github.com/bls/vic-ptv-cli/releases/download/v0.2.0/vic-ptv-cli_0.2.0_darwin_amd64.tar.gz"
+      sha256 "470a560ab1247db0ca634708800da8655e61b50e7fd2ade8a25e93b641232a64"
 
       def install
-        bin.install "vic-ptv-cli"
+        bin.install "vic-ptv"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bls/vic-ptv-cli/releases/download/v0.1.0/vic-ptv-cli_0.1.0_darwin_arm64.tar.gz"
-      sha256 "df3eb66de8e53524aa2d8159dc5432c37bec3952e6372d423759567c5d493b1c"
+      url "https://github.com/bls/vic-ptv-cli/releases/download/v0.2.0/vic-ptv-cli_0.2.0_darwin_arm64.tar.gz"
+      sha256 "a79e0f02d1f7dd86285cf16b9859a1f7249d3e7d08eb4c938693e4e3028b0bec"
 
       def install
-        bin.install "vic-ptv-cli"
+        bin.install "vic-ptv"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bls/vic-ptv-cli/releases/download/v0.1.0/vic-ptv-cli_0.1.0_linux_amd64.tar.gz"
-      sha256 "5b4e6b25e60fd765edf1bee8369739b32b75491a68f684196dadbeee907825c5"
+      url "https://github.com/bls/vic-ptv-cli/releases/download/v0.2.0/vic-ptv-cli_0.2.0_linux_amd64.tar.gz"
+      sha256 "40d31fa9a2e680f007d2146388d251c612872150fe0f393132ae16618174337b"
       def install
-        bin.install "vic-ptv-cli"
+        bin.install "vic-ptv"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bls/vic-ptv-cli/releases/download/v0.1.0/vic-ptv-cli_0.1.0_linux_arm64.tar.gz"
-      sha256 "74e4734684296e91f0e9644b59bb6eac27b78c2f3900e0f242c044ba7749cc8c"
+      url "https://github.com/bls/vic-ptv-cli/releases/download/v0.2.0/vic-ptv-cli_0.2.0_linux_arm64.tar.gz"
+      sha256 "455ac09126a95db6ec5b5abb995760958e2b5314cdfb1836eb2a09d9574336c8"
       def install
-        bin.install "vic-ptv-cli"
+        bin.install "vic-ptv"
       end
     end
   end
 
   test do
-    system "#{bin}/vic-ptv-cli", "--help"
+    system "#{bin}/vic-ptv", "--help"
   end
 end
